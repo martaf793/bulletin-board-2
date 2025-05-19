@@ -12,7 +12,7 @@
   Add a new post
 </h2>
 <%if current_user!=nil%>
-<form action="/insert_post" method="post">
+<form action="/insert_post" method="post" data-turbo="true" data-turbo-frame="posts">
   <div>
     <label for="title_box">
       Title
@@ -47,7 +47,7 @@
   <p> You must <a href="/users/sign_in">sign in </a>to add a post. </p>
 <%end%>
 <hr>
-
+<turbo-frame id="posts">
 <h2>Active posts</h2>
 
 <table border="1">
@@ -87,3 +87,4 @@
     </tr>
   <% end %>
 </table>
+</turbo-frame>
